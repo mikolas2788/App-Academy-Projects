@@ -5,6 +5,7 @@ const Greeting = ({ currentUser, logout }) => {
     debugger
     let landingPage
     if ( currentUser ) {
+        debugger
         landingPage = (
             <div>
                 <h1>Greetings { currentUser.username } </h1>
@@ -12,6 +13,7 @@ const Greeting = ({ currentUser, logout }) => {
             </div>
         )   
     } else {
+        debugger
         landingPage = (
             <div>
                 <Link to='/signup'>Sign Up</Link>
@@ -20,7 +22,7 @@ const Greeting = ({ currentUser, logout }) => {
             </div>
         )
     }
-
+    debugger
     return landingPage
 }
 

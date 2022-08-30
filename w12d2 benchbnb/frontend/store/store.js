@@ -8,7 +8,7 @@ import rootReducer from "../reducers/root_reducer"
 
 const configureStore = (preloadedState = {}) => {
     debugger
-    createStore(
+    return createStore(
         rootReducer, 
         preloadedState, 
         applyMiddleware(thunk, logger)

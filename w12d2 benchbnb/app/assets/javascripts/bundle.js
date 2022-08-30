@@ -134,11 +134,13 @@ var Greeting = function Greeting(_ref) {
   var landingPage;
 
   if (currentUser) {
+    debugger;
     landingPage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("h1", null, "Greetings ", currentUser.username, " "), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("button", {
       className: "logout",
       onClick: logout
     }, "Logout"));
   } else {
+    debugger;
     landingPage = /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("div", null, /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
       to: "/signup"
     }, "Sign Up"), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement("br", null), /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_0___default().createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_1__.Link, {
@@ -146,6 +148,7 @@ var Greeting = function Greeting(_ref) {
     }, "Log In"));
   }
 
+  debugger;
   return landingPage;
 };
 
@@ -404,16 +407,17 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 var UsersReducer = function UsersReducer() {
   var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments.length > 1 ? arguments[1] : undefined;
-  Object.freeze(state);
-  debugger;
+  Object.freeze(state); // debugger
+
+  console.log("user reducer");
 
   switch (action.type) {
     case _actions_session_actions__WEBPACK_IMPORTED_MODULE_0__.RECEIVE_CURRENT_USER:
-      debugger;
+      // debugger
       return Object.assign({}, state, _defineProperty({}, action.currentUser.id, action.currentUser));
 
     default:
-      debugger;
+      // debugger
       return state;
   }
 };
@@ -446,7 +450,7 @@ __webpack_require__.r(__webpack_exports__);
 var configureStore = function configureStore() {
   var preloadedState = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   debugger;
-  (0,redux__WEBPACK_IMPORTED_MODULE_2__.legacy_createStore)(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState, (0,redux__WEBPACK_IMPORTED_MODULE_2__.applyMiddleware)(redux_thunk__WEBPACK_IMPORTED_MODULE_3__["default"], (redux_logger__WEBPACK_IMPORTED_MODULE_0___default())));
+  return (0,redux__WEBPACK_IMPORTED_MODULE_2__.legacy_createStore)(_reducers_root_reducer__WEBPACK_IMPORTED_MODULE_1__["default"], preloadedState, (0,redux__WEBPACK_IMPORTED_MODULE_2__.applyMiddleware)(redux_thunk__WEBPACK_IMPORTED_MODULE_3__["default"], (redux_logger__WEBPACK_IMPORTED_MODULE_0___default())));
 };
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (configureStore);
@@ -41828,12 +41832,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./actions/session_actions */ "./frontend/actions/session_actions.js");
 
 
+console.log("pre-configurestore import");
 
 
 
+console.log("benchbnb");
 document.addEventListener("DOMContentLoaded", function () {
   debugger;
-  var store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])(); // Testing
+  var store = (0,_store_store__WEBPACK_IMPORTED_MODULE_2__["default"])();
+  debugger; // Testing
 
   window.signup = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__.signup;
   window.login = _actions_session_actions__WEBPACK_IMPORTED_MODULE_4__.login;
