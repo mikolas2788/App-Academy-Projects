@@ -14,7 +14,10 @@ const bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.get("/", (request, response) => response.send("Hello World"))
+app.get("/", (request, response) => {
+    console.log(response)
+    response.send("Hello World")
+})
 
 const port = process.env.PORT || 5000
 
