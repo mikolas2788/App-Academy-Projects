@@ -126,5 +126,60 @@ p binary_search([1,2,3,4,5], 6)
 def merge_sort(array)
     return array if array.length <= 1
 
-    
+    midpoint = array.length / 2
+    left = array[0...midpoint]
+    right = array[midpoint..-1]
+
+    sorted_left = merge_sort(left)
+    sorted_right = merge_sort(right)
+
+    merge(sorted_left, sorted_right)
 end 
+
+def merge(left, right)
+    merged = []
+
+    until left.empty? || right.empty?
+        left_num = left.shift
+        right_num = right.shift
+        
+        if left_num < right_num
+            merged << left_num
+        else 
+            merged << right_num
+        end 
+    end 
+
+    merged + left + right
+end 
+
+# Merge Sort
+def merge_sort(arr)
+    return arr if arr.length <= 1
+  
+    pivot = arr.length/2
+    left = arr[0...pivot]
+    right = arr[pivot..-1]
+  
+    sorted_left = merge_sort(left)
+    sorted_right = merge_sort(right)
+  
+    merge(sorted_left, sorted_right)
+  end
+  
+  def merge(sorted_left, sorted_right)
+    merged = []
+    until sorted_left.empty? || sorted_right.empty?
+      if sorted_left[0] < sorted_right[0]
+        merged << sorted_left.shift
+      else  
+        merged << sorted_right.shift
+      end
+    end
+    merged + sorted_left + sorted_right
+  end 
+  
+#   Test Case
+p merge_sort([]) # []
+p merge_sort([1]) # [1]
+p merge_sort([3,7,4,1,6,4])
