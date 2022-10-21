@@ -9,6 +9,6 @@ class UsersController < ApplicationController
     end 
     
     def show 
-
+        render json: params
     end 
 end 

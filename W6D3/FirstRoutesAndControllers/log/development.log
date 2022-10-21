@@ -112,3 +112,25 @@ No template found for UsersController#show, rendering head :no_content
 Completed 204 No Content in 0ms (ActiveRecord: 0.0ms | Allocations: 208)
 
 
+Started GET "/users/2" for ::1 at 2022-10-19 11:28:08 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav_side_dish"=>"fries", "fav_animal"=>"cats", "id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 230)
+
+
+Started POST "/users/2" for ::1 at 2022-10-19 11:28:38 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/2"):
+  
+Started GET "/users/2" for ::1 at 2022-10-19 11:28:42 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav_side_dish"=>"fries", "fav_animal"=>"cats", "id"=>"2"}
+Completed 200 OK in 0ms (Views: 0.2ms | ActiveRecord: 0.0ms | Allocations: 127)
+
+
+Started GET "/users/2" for ::1 at 2022-10-19 11:35:45 -0400
+Processing by UsersController#show as */*
+  Parameters: {"favorite_foods"=>{"lunch"=>{"protein"=>"chicken"}}, "fav_animal"=>"cats", "id"=>"2"}
+Completed 200 OK in 4ms (Views: 0.7ms | Allocations: 139)
+
+
